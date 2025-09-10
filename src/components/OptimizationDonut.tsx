@@ -28,42 +28,31 @@ export function OptimizationDonut() {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        {/* Donut Chart - Made Smaller */}
-        <div className="relative">
-          <div className="h-32">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={data}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={45}
-                  outerRadius={60}
-                  paddingAngle={3}
-                  dataKey="value"
-                >
-                  {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  contentStyle={{
-                    backgroundColor: "#1E293B",
-                    border: "1px solid #374151",
-                    borderRadius: "12px",
-                    boxShadow: "rgba(0, 0, 0, 0.25) 0px 8px 24px",
-                    fontWeight: 500,
-                    color: "#FFFFFF"
+        {/* Score and Horizontal Bar */}
+        <div className="space-y-4">
+          {/* Overall Score */}
+          <div className="text-center">
+            <div className="text-3xl font-bold text-dark-primary mb-1">{score}%</div>
+            <div className="text-sm font-medium text-dark-secondary">Overall Score</div>
+          </div>
+          
+          {/* Inline Horizontal Bars */}
+          <div className="flex gap-1 w-full h-3 rounded-full overflow-hidden bg-dark-hover">
+            {data.map((item) => {
+              const total = data.reduce((sum, d) => sum + d.value, 0);
+              const percentage = (item.value / total) * 100;
+              
+              return (
+                <div 
+                  key={item.name}
+                  className="h-full transition-all duration-300"
+                  style={{ 
+                    width: `${percentage}%`, 
+                    backgroundColor: item.color 
                   }}
                 />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-dark-primary mb-1">{score}%</div>
-              <div className="text-xs font-medium text-dark-secondary">Overall Score</div>
-            </div>
+              );
+            })}
           </div>
         </div>
 
@@ -92,7 +81,7 @@ export function OptimizationDonut() {
                 Optimize heading structure &amp; main content tags for better AI parsing
               </p>
             </div>
-            <button className="dark-button-secondary w-full gap-2 group">
+            <button className="dark-button-secondary w-full gap-2 group flex items-center justify-center whitespace-nowrap">
               View All Actions
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
