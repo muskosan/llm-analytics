@@ -57,7 +57,7 @@ export function IntegrationsPage() {
                   <CardDescription className="mb-6 text-dark-secondary">
                     {integration.description}
                   </CardDescription>
-                  <button className="dark-button-secondary w-full gap-2 group-hover:bg-dark-hover">
+                  <button className="dark-button-secondary w-full gap-2 group-hover:bg-dark-hover flex items-center justify-center whitespace-nowrap">
                     Learn More
                     <ExternalLink className="w-4 h-4" />
                   </button>
