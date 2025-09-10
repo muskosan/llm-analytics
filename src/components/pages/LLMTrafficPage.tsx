@@ -34,11 +34,11 @@ const mostVisitedPages = [
 
 const getLLMColor = (llm: string) => {
   switch (llm) {
-    case "ChatGPT": return "bg-green-100 text-green-700";
-    case "Claude": return "bg-purple-100 text-purple-700";
-    case "Gemini": return "bg-blue-100 text-blue-700";
-    case "Perplexity": return "bg-orange-100 text-orange-700";
-    default: return "bg-gray-100 text-gray-700";
+    case "ChatGPT": return "bg-green-500/10 text-dark-positive";
+    case "Claude": return "bg-purple-500/10 text-purple-400";
+    case "Gemini": return "bg-blue-500/10 text-dark-cta";
+    case "Perplexity": return "bg-orange-500/10 text-orange-400";
+    default: return "bg-dark-tag text-dark-secondary";
   }
 };
 
@@ -46,28 +46,28 @@ export function LLMTrafficPage() {
   return (
     <>
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-8 py-6">
+      <header className="bg-dark-bg border-b border-dark-border px-8 py-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-900">LLM Traffic</h1>
-            <p className="text-sm text-gray-500 mt-1">Analyze traffic from AI language models</p>
+            <h1 className="text-2xl font-semibold text-dark-primary">LLM Traffic</h1>
+            <p className="text-sm text-dark-secondary mt-1">Analyze traffic from AI language models</p>
           </div>
-          <Button variant="outline" className="gap-2">
+          <button className="dark-button-secondary gap-2">
             <BarChart3 className="w-4 h-4" />
             Traffic Report
-          </Button>
+          </button>
         </div>
       </header>
 
       <main className="flex-1 overflow-auto p-8">
         {/* LLM Traffic Chart */}
-        <Card className="rounded-xl border-0 shadow-sm bg-white mb-8">
+        <Card className="dark-card border-0 mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-purple-600" />
+            <CardTitle className="flex items-center gap-2 text-dark-primary">
+              <Zap className="w-5 h-5 text-dark-cta" />
               LLM Traffic Over Time
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-dark-secondary">
               Referral traffic from different AI language models
             </CardDescription>
           </CardHeader>
@@ -75,66 +75,67 @@ export function LLMTrafficPage() {
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={llmTrafficData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-                  <XAxis 
-                    dataKey="date" 
-                    stroke="#64748b"
+                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                  <XAxis
+                    dataKey="date"
+                    stroke="#94A3B8"
                     fontSize={12}
                     tickLine={false}
                     axisLine={false}
                   />
-                  <YAxis 
-                    stroke="#64748b"
+                  <YAxis
+                    stroke="#94A3B8"
                     fontSize={12}
                     tickLine={false}
                     axisLine={false}
                   />
-                  <Tooltip 
+                  <Tooltip
                     contentStyle={{
-                      backgroundColor: "white",
-                      border: "1px solid #e2e8f0",
+                      backgroundColor: "#1E293B",
+                      border: "1px solid #374151",
                       borderRadius: "12px",
-                      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+                      boxShadow: "rgba(0, 0, 0, 0.25) 0px 8px 24px",
+                      color: "#FFFFFF"
                     }}
                   />
                   <Legend />
-                  <Area 
-                    type="monotone" 
-                    dataKey="ChatGPT" 
+                  <Area
+                    type="monotone"
+                    dataKey="ChatGPT"
                     stackId="1"
-                    stroke="#10b981" 
+                    stroke="#10b981"
                     fill="#10b981"
                     fillOpacity={0.8}
                   />
-                  <Area 
-                    type="monotone" 
-                    dataKey="Claude" 
+                  <Area
+                    type="monotone"
+                    dataKey="Claude"
                     stackId="1"
-                    stroke="#8b5cf6" 
+                    stroke="#8b5cf6"
                     fill="#8b5cf6"
                     fillOpacity={0.8}
                   />
-                  <Area 
-                    type="monotone" 
-                    dataKey="Gemini" 
+                  <Area
+                    type="monotone"
+                    dataKey="Gemini"
                     stackId="1"
-                    stroke="#3b82f6" 
+                    stroke="#3b82f6"
                     fill="#3b82f6"
                     fillOpacity={0.8}
                   />
-                  <Area 
-                    type="monotone" 
-                    dataKey="Perplexity" 
+                  <Area
+                    type="monotone"
+                    dataKey="Perplexity"
                     stackId="1"
-                    stroke="#f59e0b" 
+                    stroke="#f59e0b"
                     fill="#f59e0b"
                     fillOpacity={0.8}
                   />
-                  <Area 
-                    type="monotone" 
-                    dataKey="Other" 
+                  <Area
+                    type="monotone"
+                    dataKey="Other"
                     stackId="1"
-                    stroke="#6b7280" 
+                    stroke="#6b7280"
                     fill="#6b7280"
                     fillOpacity={0.8}
                   />
@@ -147,26 +148,26 @@ export function LLMTrafficPage() {
         {/* Tables Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Top LLMs Table */}
-          <Card className="rounded-xl border-0 shadow-sm bg-white">
+          <Card className="dark-card border-0">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-blue-600" />
+              <CardTitle className="flex items-center gap-2 text-dark-primary">
+                <Zap className="w-5 h-5 text-dark-cta" />
                 Top LLMs
               </CardTitle>
-              <CardDescription>Leading AI models driving traffic</CardDescription>
+              <CardDescription className="text-dark-secondary">Leading AI models driving traffic</CardDescription>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
-                  <TableRow className="border-gray-200">
-                    <TableHead className="font-semibold text-gray-700">LLM</TableHead>
-                    <TableHead className="font-semibold text-gray-700 text-right">Sessions</TableHead>
-                    <TableHead className="font-semibold text-gray-700 text-right">Change</TableHead>
+                  <TableRow className="border-dark-border">
+                    <TableHead className="font-semibold text-dark-primary">LLM</TableHead>
+                    <TableHead className="font-semibold text-dark-primary text-right">Sessions</TableHead>
+                    <TableHead className="font-semibold text-dark-primary text-right">Change</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {topLLMsData.map((llm, index) => (
-                    <TableRow key={index} className="border-gray-100 hover:bg-gray-50/50">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
                       <TableCell>
                         <div className="flex items-center space-x-3">
                           <Badge className={getLLMColor(llm.llm)}>
@@ -175,12 +176,12 @@ export function LLMTrafficPage() {
                         </div>
                       </TableCell>
                       <TableCell className="text-right">
-                        <span className="font-medium text-gray-900">
+                        <span className="font-medium text-dark-primary">
                           {llm.sessions.toLocaleString()}
                         </span>
                       </TableCell>
                       <TableCell className="text-right">
-                        <Badge variant="secondary" className="bg-green-50 text-green-700">
+                        <Badge className="bg-green-500/10 text-dark-positive">
                           {llm.change}
                         </Badge>
                       </TableCell>
@@ -192,32 +193,32 @@ export function LLMTrafficPage() {
           </Card>
 
           {/* Most Visited Pages */}
-          <Card className="rounded-xl border-0 shadow-sm bg-white">
+          <Card className="dark-card border-0">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-green-600" />
+              <CardTitle className="flex items-center gap-2 text-dark-primary">
+                <Globe className="w-5 h-5 text-dark-positive" />
                 Most Visited Pages
               </CardTitle>
-              <CardDescription>Pages with highest LLM traffic</CardDescription>
+              <CardDescription className="text-dark-secondary">Pages with highest LLM traffic</CardDescription>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
-                  <TableRow className="border-gray-200">
-                    <TableHead className="font-semibold text-gray-700">Page</TableHead>
-                    <TableHead className="font-semibold text-gray-700 text-right">Sessions</TableHead>
+                  <TableRow className="border-dark-border">
+                    <TableHead className="font-semibold text-dark-primary">Page</TableHead>
+                    <TableHead className="font-semibold text-dark-primary text-right">Sessions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {mostVisitedPages.map((page, index) => (
-                    <TableRow key={index} className="border-gray-100 hover:bg-gray-50/50">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
                       <TableCell>
-                        <span className="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                        <span className="text-sm font-medium text-dark-cta hover:text-blue-400 cursor-pointer">
                           {page.page}
                         </span>
                       </TableCell>
                       <TableCell className="text-right">
-                        <Badge variant="secondary" className="font-medium">
+                        <Badge className="bg-dark-tag text-dark-secondary font-medium">
                           {page.sessions.toLocaleString()}
                         </Badge>
                       </TableCell>
@@ -230,25 +231,25 @@ export function LLMTrafficPage() {
         </div>
 
         {/* Footer Insight */}
-        <Card className="rounded-xl border-0 shadow-sm bg-gradient-to-r from-mint-50 to-mint-100">
+        <Card className="dark-card border-0 bg-gradient-to-r from-dark-card to-dark-hover">
           <CardContent className="p-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-mint-100 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-mint-600" />
+                <div className="w-12 h-12 rounded-xl bg-dark-cta/10 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-dark-cta" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-mint-900 mb-1">
+                  <h3 className="font-semibold text-dark-primary mb-1">
                     AI is driving traffic to your site
                   </h3>
-                  <p className="text-sm text-mint-700">
+                  <p className="text-sm text-dark-secondary">
                     Unlock detailed traffic attribution, conversion tracking, and AI referral insights
                   </p>
                 </div>
               </div>
-              <Button className="bg-mint-600 hover:bg-mint-700 px-8">
+              <button className="dark-button-primary px-8">
                 Upgrade
-              </Button>
+              </button>
             </div>
           </CardContent>
         </Card>
