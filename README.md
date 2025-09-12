@@ -1,7 +1,6 @@
 # Pollen Analytics
 
-
-A prototype exercise, written in React + Tailwind. 
+A prototype exercise using Radix UI and Recharts, written in React + Tailwind. 
 LLM Analytics Platform for monitoring and analyzing AI model performance.
 live: https://llm-analytics-nine.vercel.app/
 
@@ -24,12 +23,6 @@ live: https://llm-analytics-nine.vercel.app/
 - **ESNext** - Modern JavaScript features
 - **Hot Module Replacement** - Fast development with instant updates
 
-### Key Features
-- Dark theme optimized interface
-- Responsive dashboard layout
-- Custom scrollbar styling
-- Modular component architecture
-- Type-safe development
 
 ## Getting Started
 
