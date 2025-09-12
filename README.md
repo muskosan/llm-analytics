@@ -18,12 +18,6 @@ LLM Analytics Platform for monitoring and analyzing AI model performance.
 - **Recharts** - Composable charting library for data visualization
 - **Sonner** - Toast notifications
 
-### Development Tools
-- **SWC** - Fast TypeScript/JavaScript compiler
-- **ESNext** - Modern JavaScript features
-- **Hot Module Replacement** - Fast development with instant updates
-
-
 ## Getting Started
 
 ```bash
