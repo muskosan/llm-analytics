@@ -7,15 +7,15 @@ LLM Analytics Platform for monitoring and analyzing AI model performance.
 ## Stack
 
 ### Frontend
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe JavaScript for better development experience
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- **React 18** 
+- **TypeScript** 
+- **Vite** 
+- **Tailwind CSS**
 
 ### UI Components
 - **Radix UI** - Headless, accessible component primitives
-- **Lucide React** - Beautiful & consistent icon library
-- **Recharts** - Composable charting library for data visualization
+- **Lucide React** - icon library
+- **Recharts** - Composable charting library
 - **Sonner** - Toast notifications
 
 ## Getting Started
