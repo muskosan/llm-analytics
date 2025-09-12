@@ -1,8 +1,7 @@
 # Pollen Analytics
+### LIVE: https://llm-analytics-nine.vercel.app/
 
 A fictional company, and a prototype exercise. I wanted to explore some advanced UI elements and build a dashboard using Radix, Lucide, and Recharts. Written in React + Tailwind.
-
-### LIVE: https://llm-analytics-nine.vercel.app/
 
 ## Stack
 
