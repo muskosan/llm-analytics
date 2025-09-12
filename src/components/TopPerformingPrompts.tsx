@@ -77,7 +77,7 @@ export function TopPerformingPrompts() {
         {prompts.map((prompt) => (
           <div
             key={prompt.id}
-            className="p-5 rounded-xl border border-gray-100 hover:ai8-shadow transition-all duration-200 bg-ai8-light/50"
+            className="p-5 rounded-xl border border-dark-border hover:ai8-shadow transition-all duration-200 bg-ai8-light/50"
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1 mr-4">

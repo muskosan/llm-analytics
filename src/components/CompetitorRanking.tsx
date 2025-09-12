@@ -100,7 +100,7 @@ export function CompetitorRanking() {
             className={`p-5 rounded-xl border transition-all duration-200 ${
               competitor.isYou 
                 ? "border-ai8-neon/30 bg-ai8-neon/5 ai8-shadow ai8-glow-neon-subtle" 
-                : "border-gray-100 bg-ai8-light/30 hover:ai8-shadow"
+                : "border-dark-border bg-ai8-light/30 hover:ai8-shadow"
             }`}
           >
             <div className="flex items-center justify-between">

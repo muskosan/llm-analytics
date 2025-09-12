@@ -131,7 +131,7 @@ export function CrawlersPage() {
                 </TableHeader>
                 <TableBody>
                   {mostCrawledPages.map((page, index) => (
-                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                       <TableCell>
                         <span className="text-sm font-medium text-dark-cta hover:text-blue-300 cursor-pointer">
                           {page.page}
@@ -169,7 +169,7 @@ export function CrawlersPage() {
                 </TableHeader>
                 <TableBody>
                   {recentCrawls.map((crawl, index) => (
-                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                       <TableCell>
                         <Badge className={`${getCrawlerColor(crawl.crawler)} border`}>
                           {crawl.crawler}

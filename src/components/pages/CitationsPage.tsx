@@ -155,7 +155,7 @@ export function CitationsPage() {
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="border-dark-border hover:bg-dark-table-hover">
+                  <TableRow className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                     <TableHead className="font-semibold text-dark-primary">DR</TableHead>
                     <TableHead className="font-semibold text-dark-primary">Domain</TableHead>
                     <TableHead className="font-semibold text-dark-primary">PA</TableHead>

@@ -117,7 +117,7 @@ export function ReportsPage() {
           <CardContent>
             <Table>
               <TableHeader>
-                <TableRow className="border-dark-border hover:bg-dark-table-hover">
+                <TableRow className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                   <TableHead className="font-semibold text-dark-primary">Date</TableHead>
                   <TableHead className="font-semibold text-dark-primary">Visibility %</TableHead>
                   <TableHead className="font-semibold text-dark-primary">Presence %</TableHead>
@@ -130,7 +130,7 @@ export function ReportsPage() {
                 {reportData.map((row, index) => (
                   <TableRow 
                     key={row.date}
-                    className="border-dark-border hover:bg-dark-table-hover transition-colors"
+                    className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200"
                   >
                     <TableCell className="font-medium text-dark-primary">
                       <div className="flex items-center space-x-2">

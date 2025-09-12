@@ -167,7 +167,7 @@ export function LLMTrafficPage() {
                 </TableHeader>
                 <TableBody>
                   {topLLMsData.map((llm, index) => (
-                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                       <TableCell>
                         <div className="flex items-center space-x-3">
                           <Badge className={getLLMColor(llm.llm)}>
@@ -211,7 +211,7 @@ export function LLMTrafficPage() {
                 </TableHeader>
                 <TableBody>
                   {mostVisitedPages.map((page, index) => (
-                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover">
+                    <TableRow key={index} className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                       <TableCell>
                         <span className="text-sm font-medium text-dark-cta hover:text-blue-400 cursor-pointer">
                           {page.page}

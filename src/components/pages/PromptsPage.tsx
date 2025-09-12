@@ -160,7 +160,7 @@ export function PromptsPage() {
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="border-dark-border hover:bg-dark-table-hover">
+                  <TableRow className="border-dark-border hover:bg-dark-table-hover transition-colors duration-200">
                     <TableHead className="w-12">
                       <Checkbox
                         checked={selectedPrompts.length === promptsData.length}
