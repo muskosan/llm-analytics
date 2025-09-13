@@ -51,13 +51,26 @@ const otherItems = [
 
 export function Dashboard() {
   const [activePage, setActivePage] = useState("Dashboard");
+  const [opacity, setOpacity] = useState(1);
+
+  const handlePageChange = (newPage: string) => {
+    if (newPage === activePage) return;
+
+    setOpacity(0);
+    setTimeout(() => {
+      setActivePage(newPage);
+      setTimeout(() => {
+        setOpacity(1);
+      }, 25);
+    }, 100);
+  };
 
   const renderNavItem = (item: any, isActive: boolean) => {
     const Icon = item.icon;
     return (
       <button
         key={item.label}
-        onClick={() => setActivePage(item.label)}
+        onClick={() => handlePageChange(item.label)}
         className={`dark-nav-item w-full text-left ${isActive ? "dark-nav-item-active" : ""
           }`}
       >
@@ -169,7 +182,16 @@ export function Dashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {renderContent()}
+        <div
+          style={{
+            opacity: opacity,
+            transition: 'opacity 100ms ease-in-out',
+            height: '100%',
+            overflow: 'auto'
+          }}
+        >
+          {renderContent()}
+        </div>
       </div>
     </div>
   );
