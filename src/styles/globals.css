@@ -329,7 +329,12 @@ html {
     color: var(--color-dark-negative);
   }
 }
+  button:hover {
+    cursor: pointer;
+  }
+.sidebar-nav {
 
+}
 /* Custom scrollbar for sidebar navigation */
 .sidebar-nav {
   --sb-track-color: #232E33;
